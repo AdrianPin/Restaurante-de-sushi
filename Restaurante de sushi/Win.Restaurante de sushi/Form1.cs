@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Win.Restaurante_de_sushi
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -29,12 +30,41 @@ namespace Win.Restaurante_de_sushi
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string usuario;
+            string contraseña;
+
+            usuario = textBox1.Text;
+            contraseña = textBox2.Text;
+            if (usuario == "REYDESUSHI" && contraseña == "sushiper")
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña incorrecta");
+            }
+
+
+              }
+             private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
     }
 }
+
