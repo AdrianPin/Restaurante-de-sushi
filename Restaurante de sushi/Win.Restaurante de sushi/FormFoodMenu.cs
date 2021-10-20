@@ -69,11 +69,16 @@ namespace Win.Restaurante_de_sushi
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             if (precioTextBox.Text != " ")
+            { 
+                var resultado = MessageBox.Show("Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
             {
+
                 var precio = Convert.ToInt32(precioTextBox.Text);
                 Eliminar(precio);
             }
         }
+    }
 
         private void Eliminar(int precio)
         {
