@@ -298,7 +298,6 @@
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFoodMenuBindingSource, "Precio", true));
             this.precioTextBox.Location = new System.Drawing.Point(118, 130);
             this.precioTextBox.Name = "precioTextBox";
-            this.precioTextBox.ReadOnly = true;
             this.precioTextBox.Size = new System.Drawing.Size(513, 22);
             this.precioTextBox.TabIndex = 10;
             // 

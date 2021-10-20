@@ -103,7 +103,7 @@ namespace BL.Sushi
 
             if (foodmenu.Calificacion < 0)
             {
-                resultado.Mensaje = "La existencia debe ser mayor que 0 ";
+                resultado.Mensaje = "La calificacion debe ser mayor que 0 ";
                 resultado.Exitoso = false;
             }
             return resultado;
