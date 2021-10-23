@@ -38,6 +38,8 @@ namespace BL.Sushi
             {
                 foodmenu.Precio = ListaFoodMenu.Max(item => item.Precio) + 1;
             }
+
+            _contexto.SaveChanges();
             resultado.Exitoso = true;
             return resultado;
         }
@@ -53,6 +55,7 @@ namespace BL.Sushi
                 if (foodmenu.Precio == precio)
                 {
                     ListaFoodMenu.Remove(foodmenu);
+                    _contexto.SaveChanges();
                     return true;
                 }
             }
@@ -96,7 +99,7 @@ namespace BL.Sushi
         public class foodmenu
         {
 
-     
+            public int Id { get; set; }
             public string Menu { get; set; }
             public string Descripcion { get; set; }
             public double Precio { get; set; }

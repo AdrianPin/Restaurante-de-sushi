@@ -37,6 +37,7 @@ namespace Win.Restaurante_de_sushi
             {
                 listaFoodMenuBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Producto Guardado");
             }
             else
             {
