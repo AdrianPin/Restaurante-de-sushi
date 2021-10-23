@@ -10,23 +10,24 @@ namespace BL.Sushi
 {
     public class FoodMenuBL
     {
-        ContextoRestaurant _contexto;
-        public BindingList<FoodMenu> ListaFoodMenu { get; set; }
+        Contexto _contexto;
+        public BindingList<foodmenu> ListaFoodMenu { get; set; }
+      
 
         public FoodMenuBL()
         {
-            _contexto = new ContextoRestaurant();
-            ListaFoodMenu = new BindingList<FoodMenu>();
+            _contexto = new Contexto();
+            ListaFoodMenu = new BindingList<foodmenu>();
         }
-        public BindingList<FoodMenu> ObtenerFoodMenu()
+        public BindingList<foodmenu> ObtenerFoodMenu()
         {
-            _contexto.foodmenu.Load();
-            ListaFoodMenu = _contexto.foodmenu.Local.ToBindingList();
+            _contexto.FoodMenu.Load();
+            ListaFoodMenu = _contexto.FoodMenu.Local.ToBindingList();
             return ListaFoodMenu;
         }
 
 
-        public Resultado GuardarFoodMenu(FoodMenu foodmenu)
+        public Resultado GuardarFoodMenu(foodmenu foodmenu)
         {
             var resultado = Validar(foodmenu);
             if (resultado.Exitoso == false)
@@ -42,7 +43,7 @@ namespace BL.Sushi
         }
         public void AgregarFoodMenu()
         {
-            var nuevoFoodMenu = new FoodMenu();
+            var nuevoFoodMenu = new foodmenu();
             ListaFoodMenu.Add(nuevoFoodMenu);
         }
         public bool EliminarFoodMenu(double precio)
@@ -57,7 +58,7 @@ namespace BL.Sushi
             }
             return false;
         }
-        private Resultado Validar(FoodMenu foodmenu)
+        private Resultado Validar(foodmenu foodmenu)
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;
@@ -92,10 +93,10 @@ namespace BL.Sushi
 
         }
 
-        public class FoodMenu
+        public class foodmenu
         {
 
-
+     
             public string Menu { get; set; }
             public string Descripcion { get; set; }
             public double Precio { get; set; }

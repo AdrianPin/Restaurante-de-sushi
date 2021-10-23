@@ -8,12 +8,15 @@ using static BL.Sushi.FoodMenuBL;
 
 namespace BL.Sushi
 {
-    public class ContextoRestaurant: DbContext
+    class Contexto:DbContext
     {
-        public ContextoRestaurant(): base()
-        {
-                
+  
+
+        public Contexto(): base()
+            {
+
         }
-        public DbSet<FoodMenu> foodmenu  { get; set; }
+    
+            public DbSet<foodmenu> FoodMenu { get; set; }
     }
 }
