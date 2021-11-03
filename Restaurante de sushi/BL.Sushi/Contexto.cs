@@ -21,9 +21,13 @@ namespace BL.Sushi
          protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());//Agrega Datos de inicio a la base de datos despues de eliminar
         }
 
 
-        public DbSet<foodmenu> FoodMenu { get; set; }
+        public DbSet<foodmenu> foodmenu { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Tipo> Tipos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

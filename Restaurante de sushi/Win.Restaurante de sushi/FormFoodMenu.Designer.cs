@@ -34,8 +34,9 @@
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label menuLabel;
             System.Windows.Forms.Label precioLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFoodMenu));
             System.Windows.Forms.Label fotoLabel;
+            System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFoodMenu));
             this.listaFoodMenuBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.listaFoodMenuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -62,12 +63,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             activoLabel = new System.Windows.Forms.Label();
             calificacionLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             menuLabel = new System.Windows.Forms.Label();
             precioLabel = new System.Windows.Forms.Label();
             fotoLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaFoodMenuBindingNavigator)).BeginInit();
             this.listaFoodMenuBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaFoodMenuBindingSource)).BeginInit();
@@ -78,7 +81,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(28, 190);
+            activoLabel.Location = new System.Drawing.Point(28, 216);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(50, 17);
             activoLabel.TabIndex = 1;
@@ -87,7 +90,7 @@
             // calificacionLabel
             // 
             calificacionLabel.AutoSize = true;
-            calificacionLabel.Location = new System.Drawing.Point(26, 163);
+            calificacionLabel.Location = new System.Drawing.Point(26, 185);
             calificacionLabel.Name = "calificacionLabel";
             calificacionLabel.Size = new System.Drawing.Size(83, 17);
             calificacionLabel.TabIndex = 3;
@@ -119,6 +122,25 @@
             precioLabel.Size = new System.Drawing.Size(52, 17);
             precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio:";
+            // 
+            // fotoLabel
+            // 
+            fotoLabel.AutoSize = true;
+            fotoLabel.Location = new System.Drawing.Point(711, 69);
+            fotoLabel.Name = "fotoLabel";
+            fotoLabel.Size = new System.Drawing.Size(0, 17);
+            fotoLabel.TabIndex = 11;
+            fotoLabel.Click += new System.EventHandler(this.fotoLabel_Click);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(28, 161);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(73, 17);
+            label1.TabIndex = 16;
+            label1.Text = "Categoria:";
+            label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // listaFoodMenuBindingNavigator
             // 
@@ -272,7 +294,7 @@
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaFoodMenuBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(118, 188);
+            this.activoCheckBox.Location = new System.Drawing.Point(118, 214);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(441, 19);
             this.activoCheckBox.TabIndex = 2;
@@ -281,7 +303,7 @@
             // calificacionTextBox
             // 
             this.calificacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaFoodMenuBindingSource, "Calificacion", true));
-            this.calificacionTextBox.Location = new System.Drawing.Point(118, 160);
+            this.calificacionTextBox.Location = new System.Drawing.Point(118, 185);
             this.calificacionTextBox.Name = "calificacionTextBox";
             this.calificacionTextBox.Size = new System.Drawing.Size(513, 22);
             this.calificacionTextBox.TabIndex = 4;
@@ -314,15 +336,6 @@
             // listaFoodMenuBindingSource1
             // 
             this.listaFoodMenuBindingSource1.DataSource = typeof(BL.Sushi.FoodMenuBL.foodmenu);
-            // 
-            // fotoLabel
-            // 
-            fotoLabel.AutoSize = true;
-            fotoLabel.Location = new System.Drawing.Point(711, 69);
-            fotoLabel.Name = "fotoLabel";
-            fotoLabel.Size = new System.Drawing.Size(0, 17);
-            fotoLabel.TabIndex = 11;
-            fotoLabel.Click += new System.EventHandler(this.fotoLabel_Click);
             // 
             // fotoPictureBox
             // 
@@ -361,11 +374,21 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "jpg, png | *.jpg; *.png";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(118, 158);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(513, 22);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // FormFoodMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 314);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(fotoLabel);
@@ -423,5 +446,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

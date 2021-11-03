@@ -51,15 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriasBL.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="DatosdeInicio1.cs" />
     <Compile Include="FoodMenu.cs" />
     <Compile Include="FoodMenuBL.cs" />
-    <Compile Include="Resultado.cs" />
-    <Compile Include="resultado1.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tipo.cs" />
-    <Compile Include="TiposBl.cs" />
+    <Compile Include="TiposBL.cs" />
+    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
