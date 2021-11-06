@@ -26,8 +26,8 @@ namespace BL.Sushi
 
 
         public DbSet<foodmenu> foodmenu { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Tipo> Tipos { get; set; }
+        public DbSet<categoria> Categorias { get; set; }
+        public DbSet<categoria> Tipos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
     }
 }

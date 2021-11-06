@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 
 namespace BL.Sushi
 {
-    public class TiposBl
+    public class TiposBL
     {
+
         Contexto _contexto;
 
-        public BindingList<Tipo> ListaTipos { get; set; }
+
+        public BindingList<categoria> ListaTipos { get; set; }
 
 
         public TiposBL()
         {
             _contexto = new Contexto();
-            ListaTipos = new BindingList<Tipo>();
+            ListaTipos = new BindingList<categoria>();
         }
-        public BindingList<Tipo> ObtenerTipos()
+        public BindingList<categoria> ObtenerCategorias()
         {
             _contexto.Tipos.Load();
             ListaTipos = _contexto.Tipos.Local.ToBindingList();

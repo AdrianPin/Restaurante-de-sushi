@@ -105,9 +105,9 @@ namespace BL.Sushi
             public double Precio { get; set; }
             public int Calificacion { get; set; }
             public int CategoriaId { get; set; }
-            public Categoria Categoria { get; set; }
+            public categoria Categoria { get; set; }
             public int TipoId { get; set; }
-            public Tipo Tipo { get; set; }
+            public categoria Tipo { get; set; }
             public byte[] Foto { get; set; }
             public bool Activo { get; set; }
         }

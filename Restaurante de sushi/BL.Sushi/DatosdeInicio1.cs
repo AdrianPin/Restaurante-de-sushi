@@ -17,15 +17,15 @@ namespace BL.Sushi
 
             contexto.Usuarios.Add(usuarioAdmin);
 
-            var categoria1 = new Categoria();
+            var categoria1 = new categoria();
             categoria1.Descripcion = "Mar";
             contexto.Categorias.Add(categoria1);
 
-               var categoria2 = new Categoria();
+               var categoria2 = new categoria();
             categoria2.Descripcion = "Tierra";
             contexto.Categorias.Add(categoria2);
 
-            var tipo1 = new Tipo();
+            var tipo1 = new categoria();
             tipo1.Descripcion = "Mediterranio";
             contexto.Tipos.Add(tipo1);
 
