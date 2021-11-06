@@ -53,8 +53,7 @@
   <ItemGroup>
     <Compile Include="CategoriasBL.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="DatosdeInicio1.cs" />
-    <Compile Include="FoodMenu.cs" />
+    <Compile Include="DatosdeInicio.cs" />
     <Compile Include="FoodMenuBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

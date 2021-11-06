@@ -4,7 +4,7 @@
     {
         internal string contraseña;
 
-        public string Contraseña { get; internal set; }
-        public string Nombre { get; internal set; }
+        public string Contraseña { get;  set; }
+        public string Nombre { get;  set; }
     }
 }

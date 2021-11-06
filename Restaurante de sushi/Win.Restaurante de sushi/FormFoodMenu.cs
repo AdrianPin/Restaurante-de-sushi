@@ -30,7 +30,7 @@ namespace Win.Restaurante_de_sushi
         private void listaFoodMenuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             listaFoodMenuBindingSource.EndEdit();
-            var foodmenu = (foodmenu)listaFoodMenuBindingSource.Current;
+            var foodmenu = (FoodMenu)listaFoodMenuBindingSource.Current;
 
             if(fotoPictureBox.Image != null)
             {
@@ -134,7 +134,7 @@ namespace Win.Restaurante_de_sushi
         private void button1_Click(object sender, EventArgs e)
         {
 
-            var foodmenu = (foodmenu)listaFoodMenuBindingSource.Current;
+            var foodmenu = (FoodMenu)listaFoodMenuBindingSource.Current;
             if (foodmenu != null)
             {
                 openFileDialog1.ShowDialog();

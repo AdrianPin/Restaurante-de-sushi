@@ -14,15 +14,15 @@ namespace BL.Sushi
         Contexto _contexto;
 
 
-        public BindingList<categoria> ListaTipos { get; set; }
+        public BindingList<Tipo> ListaTipos { get; set; }
 
 
         public TiposBL()
         {
             _contexto = new Contexto();
-            ListaTipos = new BindingList<categoria>();
+            ListaTipos = new BindingList<Tipo>();
         }
-        public BindingList<categoria> ObtenerCategorias()
+        public BindingList<Tipo> ObtenerTipos()
         {
             _contexto.Tipos.Load();
             ListaTipos = _contexto.Tipos.Local.ToBindingList();

@@ -11,21 +11,22 @@ namespace BL.Sushi
     {
         protected override void Seed(Contexto contexto)
         {
+
             var usuarioAdmin = new Usuario();
             usuarioAdmin.Nombre = "REYDESUSHI";
             usuarioAdmin.contraseña = "sushiper";
 
             contexto.Usuarios.Add(usuarioAdmin);
 
-            var categoria1 = new categoria();
+            var categoria1 = new Categoria();
             categoria1.Descripcion = "Mar";
             contexto.Categorias.Add(categoria1);
 
-               var categoria2 = new categoria();
+            var categoria2 = new Categoria();
             categoria2.Descripcion = "Tierra";
             contexto.Categorias.Add(categoria2);
 
-            var tipo1 = new categoria();
+            var tipo1 = new Tipo();
             tipo1.Descripcion = "Mediterranio";
             contexto.Tipos.Add(tipo1);
 

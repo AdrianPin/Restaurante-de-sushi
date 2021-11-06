@@ -14,22 +14,22 @@ namespace BL.Sushi
         Contexto _contexto;
 
        
-        public BindingList<categoria> ListaCategorias { get; set; }
+        public BindingList<Categoria> ListaCategorias { get; set; }
 
 
         public CategoriasBL()
         {
             _contexto = new Contexto();
-            ListaCategorias = new BindingList<categoria>();
+            ListaCategorias = new BindingList<Categoria>();
         }
-        public BindingList<categoria> ObtenerCategorias()
+        public BindingList<Categoria> ObtenerCategorias()
         {
             _contexto.Categorias.Load();
             ListaCategorias = _contexto.Categorias.Local.ToBindingList();
             return ListaCategorias;
         }
     }
-    public class categoria
+    public class Categoria
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }

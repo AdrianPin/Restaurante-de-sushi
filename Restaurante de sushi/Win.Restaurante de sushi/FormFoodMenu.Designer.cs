@@ -335,7 +335,7 @@
             // 
             // listaFoodMenuBindingSource1
             // 
-            this.listaFoodMenuBindingSource1.DataSource = typeof(BL.Sushi.FoodMenuBL.foodmenu);
+            
             // 
             // fotoPictureBox
             // 
