@@ -9,7 +9,7 @@ using static BL.Sushi.FoodMenuBL;
 
 namespace BL.Sushi
 {
-    class Contexto : DbContext
+    public class Contexto : DbContext
     {
 
 

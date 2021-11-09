@@ -64,6 +64,12 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Contexto.datasource" />
+    <None Include="Properties\DataSources\FoodMenuBL.datasource" />
+    <None Include="Properties\DataSources\FoodMenuBL.foodmenu.datasource" />
+    <None Include="Properties\DataSources\FoodMenuBL.Resultado.datasource" />
+    <None Include="Properties\DataSources\SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\Tipo.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

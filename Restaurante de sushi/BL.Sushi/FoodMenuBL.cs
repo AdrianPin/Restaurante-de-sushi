@@ -43,11 +43,7 @@ namespace BL.Sushi
             resultado.Exitoso = true;
             return resultado;
         }
-        public class Resultado
-        {
-            public bool Exitoso { get; set; }
-            public string Mensaje { get; set; }
-        }
+        
 
 
 
@@ -124,6 +120,12 @@ namespace BL.Sushi
             {
                 Activo = true;
             }
+            
+        }
+        public class Resultado
+        {
+            public bool Exitoso { get; set; }
+            public string Mensaje { get; set; }
         }
     }
 }

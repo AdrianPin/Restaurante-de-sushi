@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BL.Sushi
 {
-    public class DatosdeInicio : CreateDatabaseIfNotExists<Contexto>
+    public class DatosdeInicio : CreateDatabaseIfNotExists<Contexto> 
     {
         protected override void Seed(Contexto contexto)
         {
