@@ -39,14 +39,18 @@ namespace BL.Sushi
                 foodmenu.Precio = ListaFoodMenu.Max(item => item.Precio) + 1;
             }
 
+            foodmenu.CategoriaId=1  ;
+            foodmenu.TipoId=1;
+
             _contexto.SaveChanges();
             resultado.Exitoso = true;
             return resultado;
         }
-        
 
-
-
+        public object ObtenerCategorias()
+        {
+            throw new NotImplementedException();
+        }
 
         public void AgregarFoodMenu()
         {

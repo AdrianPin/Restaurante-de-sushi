@@ -16,13 +16,21 @@ namespace Win.Restaurante_de_sushi
     public partial class FormFoodMenu : Form
     {
         FoodMenuBL _FoodMenu;
-
+        CategoriasBL _categorias;
+        TiposBL _tiposBL;
 
         public FormFoodMenu()
         {
             InitializeComponent();
             _FoodMenu = new FoodMenuBL();
             listaFoodMenuBindingSource.DataSource = _FoodMenu.ObtenerFoodMenu();
+
+            _categorias = new CategoriasBL();
+             listaCategoriasBindingSource.DataSource = _categorias.ObtenerCategorias();
+
+            _tiposBL = new TiposBL();
+             listaTiposBindingSource.DataSource = _tiposBL.ObtenerTipos();
+
         }
 
 
@@ -133,10 +141,10 @@ namespace Win.Restaurante_de_sushi
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             var foodmenu = (FoodMenu)listaFoodMenuBindingSource.Current;
             if (foodmenu != null)
             {
+
                 openFileDialog1.ShowDialog();
                 var archivo = openFileDialog1.FileName;
 
@@ -170,6 +178,16 @@ namespace Win.Restaurante_de_sushi
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoriaIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tiposBLBindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
         }
