@@ -82,7 +82,6 @@
     <Compile Include="FormFactura.Designer.cs">
       <DependentUpon>FormFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFactura1.cs" />
     <Compile Include="FormFoodMenu.cs">
       <SubType>Form</SubType>
     </Compile>

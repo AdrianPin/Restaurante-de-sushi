@@ -32,6 +32,6 @@ namespace BL.Sushi
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Factura> Facturas { get; set; }
-      
+        public object FoodMenu { get; internal set; }
     }
 }

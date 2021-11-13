@@ -53,10 +53,10 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.listaClientesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripTextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             menuLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -167,7 +167,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.listaClientesBindingNavigatorSaveItem,
-            this.toolStripTextBox1});
+            this.toolStripButtonCancelar});
             this.listaClientesBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaClientesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaClientesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -187,6 +187,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -203,6 +204,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -273,10 +275,19 @@
             this.listaClientesBindingNavigatorSaveItem.Text = "Guardar datos";
             this.listaClientesBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaClientesBindingNavigatorSaveItem_Click);
             // 
+            // toolStripButtonCancelar
+            // 
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(24, 27);
+            this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.Visible = false;
+      
+            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(120, 66);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(513, 22);
             this.textBox3.TabIndex = 9;
             // 
@@ -294,13 +305,6 @@
             this.textBox5.Size = new System.Drawing.Size(26, 22);
             this.textBox5.TabIndex = 13;
             // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
-            this.toolStripTextBox1.Text = "Cancelar";
-            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
-            // 
             // FormClientes
             // 
             this.ClientSize = new System.Drawing.Size(806, 375);
@@ -313,7 +317,6 @@
             this.Controls.Add(this.listaClientesBindingNavigator);
             this.Name = "FormClientes";
             this.Text = "Clientes";
-            this.Load += new System.EventHandler(this.FormClientes_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingNavigator)).EndInit();
             this.listaClientesBindingNavigator.ResumeLayout(false);
@@ -344,6 +347,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripButtonCancelar;
     }
 }

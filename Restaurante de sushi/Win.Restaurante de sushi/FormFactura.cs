@@ -28,6 +28,8 @@ namespace Win.Restaurante_de_sushi
             _clientesBL = new ClientesBL();
             listaClientesBindingSource.DataSource = _clientesBL.ObtenerClientes();
 
+            _foodmenuBL = new FoodMenuBL();
+            listaFoodMenuBindingSource.DataSource = _foodmenuBL.ObtenerFoodMenu();
            
         }
 
@@ -80,6 +82,78 @@ namespace Win.Restaurante_de_sushi
                 MessageBox.Show(resultado.Mensaje);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+            _facturaBL.AgregarFacturaDetalle(factura);
+            DeshabilitarHabilitarBotones(false);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+            var facturaDetalle = (FacturaDetalle)facturaDetalleBindingSource.Current;
+
+            _facturaBL.RemoverFacturaDetalle(factura, facturaDetalle);
+
+            DeshabilitarHabilitarBotones(false);
+        }
+
+        private void facturaDetalleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        private void facturaDetalleDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+            _facturaBL.CalcularFactura(factura);
+
+            listaFacturasBindingSource.ResetBindings(false);
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (idTextBox.Text != "")
+            {
+                var resultado = MessageBox.Show("Desea anular esta factura?", "Anular", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    var id = Convert.ToInt32(idTextBox.Text);
+                    Anular(id);
+                }
+            }
+        
+        }
+        private void Anular(int id)
+        {
+            var resultado = _facturaBL.AnularFactura(id);
+
+            if (resultado == true)
+            {
+                listaFacturasBindingSource.ResetBindings(false);
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al anular la factura");
+            }
+        }
+
+        private void listaFacturasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var factura = (Factura)listaFacturasBindingSource.Current;
+
+            if (factura != null && factura.Id != 0 && factura.Activo == false)
+            {
+                label1.Visible = true;
+            }
+            else
+            {
+                label1.Visible = false;
+            }
+        }
     }
-    }
+}
 

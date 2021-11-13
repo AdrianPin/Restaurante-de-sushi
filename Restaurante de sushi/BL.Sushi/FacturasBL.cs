@@ -52,6 +52,21 @@ namespace BL.Sushi
             }
         }
 
+        public void CalcularFactura(Factura factura)
+        {
+            if (factura != null)
+            {
+                double subtotal = 0;
+
+              
+
+                factura.Subtotal = subtotal;
+                factura.Impuesto = subtotal * 0.15;
+                factura.Total = subtotal + factura.Impuesto;
+            }
+        }
+
+
         public void CancelarCambios()
         {
             foreach (var item in _contexto.ChangeTracker.Entries())
@@ -68,8 +83,9 @@ namespace BL.Sushi
             {
                 return resultado;
             }
-
             CalcularExistencia(factura);
+
+          
 
             _contexto.SaveChanges();
             resultado.Exitoso = true;
@@ -131,29 +147,6 @@ namespace BL.Sushi
             return resultado;
         }
 
-        public void CalcularFactura(Factura factura)
-        {
-            if (factura != null)
-            {
-                double subtotal = 0;
-
-                foreach (var detalle in factura.FacturaDetalle)
-                {
-                    var foodmenu = _contexto.foodmenu.Find(detalle.FoodMenuId);
-                    if (foodmenu != null)
-                    {
-                        detalle.Precio = foodmenu.Precio;
-                        detalle.Total = detalle.Cantidad * foodmenu.Precio;
-
-                        subtotal += detalle.Total;
-                    }
-                }
-
-                factura.Subtotal = subtotal;
-                factura.Impuesto = subtotal * 0.15;
-                factura.Total = subtotal + factura.Impuesto;
-            }
-        }
 
         public bool AnularFactura(int id)
         {
