@@ -154,6 +154,16 @@ namespace Win.Restaurante_de_sushi
                 label1.Visible = false;
             }
         }
+
+        private void FormFactura_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturaDetalleDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
     }
 }
 
